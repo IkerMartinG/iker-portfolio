@@ -472,3 +472,11 @@ a:hover { color: var(--ink); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Imágenes de proyectos: caja con la proporción de las capturas (16:10) */
+.project__media { aspect-ratio: 16 / 10; min-height: 0; align-self: flex-start; border: 1px solid var(--line); }
+.project__media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+
+/* Capturas de móvil (AlFallo): enteras y centradas sobre fondo oscuro */
+.project__media--phone { padding: 20px; background: #15202B; border-color: #15202B; }
+.project__media--phone img { width: auto; height: 100%; max-height: none; margin: 0 auto; object-fit: contain; border-radius: 18px; }
