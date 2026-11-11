@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iker Martín Gámez · Desarrollo web y apps en Tenerife</title>
+  <meta name="description" content="Desarrollador fullstack en Tenerife. Webs para negocios con reservas, pagos, avisos automáticos y paneles de gestión.">
+  <meta property="og:title" content="Iker Martín Gámez · Desarrollo web y apps">
+  <meta property="og:description" content="Hago la parte de tu web que no se ve: reservas, pagos, avisos y paneles de gestión.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#15202B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__row">
+      <a class="brand" href="#inicio">Iker Martín</a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#servicios">Qué hago</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#como-trabajo">Cómo trabajo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- HERO: la capa de delante es la web normal. La de detrás (rayos X) se genera
+         en js/main.js clonando esta capa y se ve a través de la lupa que sigue al cursor. -->
+    <section class="hero" id="inicio" data-lens>
+      <div class="hero__front">
+        <div class="wrap hero__inner">
+          <p class="hero__kicker">Iker Martín Gámez, desarrollador fullstack en Tenerife</p>
+          <h1 class="hero__title" data-xray-note="// esto es la parte fácil">Hago la parte de tu web que no se ve.</h1>
+          <p class="hero__lead" data-xray-note="// lo interesante está aquí debajo">La web bonita es la mitad. La otra mitad son las reservas que no se pisan, los pagos que llegan y los avisos que salen solos. Eso es lo que más me gusta construir, y también hago el diseño de delante.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contacto" data-xray-text="POST /api/contacto">Cuéntame tu proyecto</a>
+            <a class="btn btn--ghost" href="#proyectos" data-xray-text="GET /api/proyectos">Ver proyectos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__back" aria-hidden="true" inert>
+        <canvas class="hero__canvas"></canvas>
+      </div>
+      <div class="hero__ring" aria-hidden="true"></div>
+
+      <div class="wrap hero__hint-row">
+        <p class="hero__hint" data-hint>
+          <span class="hero__hint-dot" aria-hidden="true"></span>
+          <span data-hint-text>Pasa el cursor por la cabecera para ver lo que hay debajo</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <h2 class="section__title">Tres formas de trabajar juntos</h2>
+        <ul class="services">
+          <li>
+            <h3>Web para tu negocio</h3>
+            <p>Una página clara, rápida y que se ve bien en el móvil, con lo que tus clientes buscan: horarios, carta o servicios, cómo llegar y cómo contactarte.</p>
+          </li>
+          <li>
+            <h3>Web con reservas o pedidos</h3>
+            <p>Lo anterior, más un sistema para que tus clientes reserven, pidan o paguen online, y tú lo gestiones todo desde un panel.</p>
+          </li>
+          <li>
+            <h3>Herramienta a medida</h3>
+            <p>Si hoy llevas algo con papel, WhatsApp y hojas de cálculo, lo convierto en una aplicación sencilla que hace el trabajo repetitivo por ti.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="proyectos">
+      <div class="wrap">
+        <h2 class="section__title">Proyectos</h2>
+        <p class="section__intro">Algunas cosas que he construido, contadas por el problema que resuelven.</p>
+
+        <div class="projects">
+          <article class="project">
+            <div class="project__media">[Captura de AlFallo: guárdala como assets/alfallo.jpg y cambia este div por un &lt;img&gt;]</div>
+            <div class="project__body">
+              <h3>AlFallo</h3>
+              <p>Una app para quien entrena fuerza y quiere ver si progresa: planifica la sesión, apunta series, repeticiones y peso, y detecta solo cuándo bates un récord.</p>
+              <p>Incluye estadísticas, logros por constancia y un feed donde los usuarios comparten entrenamientos y se animan entre ellos. La diseñé y programé entera, de la base de datos a la interfaz móvil.</p>
+              <ul class="project__stack" aria-label="Tecnologías">
+                <li>Node.js</li><li>Express</li><li>MongoDB</li>
+              </ul>
+              <div class="project__links">
+                <a href="https://alfallo.dev">Abrir alfallo.dev</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media"><img src="assets/casa-anaga.jpg" alt="Panel de sala de Casa Anaga: línea de tiempo con las reservas de cada mesa durante la comida" loading="lazy" width="1200" height="750"></div>
+            <div class="project__body">
+              <h3>Casa Anaga: reservas para un restaurante</h3>
+              <p>Un restaurante que apunta las reservas en una libreta pierde mesas y llamadas. Aquí el cliente reserva desde la web y solo ve las horas en las que de verdad queda una mesa para su grupo.</p>
+              <p>La sala tiene un panel con la línea de tiempo de cada mesa para sentar, mover o cancelar reservas. Las dobles reservas se bloquean con un índice único en MongoDB, sin transacciones, y la asignación coge siempre la mesa más ajustada.</p>
+              <ul class="project__stack" aria-label="Tecnologías">
+                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Tests con node:test</li>
+              </ul>
+              <div class="project__links">
+                <!-- Cambia el # por la URL de Render cuando lo despliegues -->
+                <a href="#">Ver demo</a>
+                <a href="https://github.com/IkerMartinG/reservas-restaurante">Código en GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__media"><img src="assets/fisio-teide.jpg" alt="Agenda de Fisio Teide: citas del día en columnas por fisioterapeuta" loading="lazy" width="1200" height="750"></div>
+            <div class="project__body">
+              <h3>Fisio Teide: citas para una clínica</h3>
+              <p>Una clínica de fisioterapia donde cada fisio tiene su horario y cada tratamiento dura distinto. Los pacientes piden cita online y reciben un recordatorio automático 24 horas antes.</p>
+              <p>La clínica ve la agenda por profesional y lleva fichas de paciente con historial y notas clínicas. Cada reserva es una única escritura atómica sobre la agenda del día, y los recordatorios no se duplican aunque haya varios servidores.</p>
+              <ul class="project__stack" aria-label="Tecnologías">
+                <li>Node.js</li><li>Express</li><li>MongoDB</li><li>Tareas programadas</li>
+              </ul>
+              <div class="project__links">
+                <!-- Cambia el # por la URL de Render cuando lo despliegues -->
+                <a href="#">Ver demo</a>
+                <a href="https://github.com/IkerMartinG/citas-fisioterapia">Código en GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-trabajo">
+      <div class="wrap">
+        <h2 class="section__title">Cómo trabajo</h2>
+        <ol class="steps">
+          <li>
+            <span class="steps__n" aria-hidden="true">1</span>
+            <h3>Hablamos</h3>
+            <p>Me cuentas cómo funciona tu negocio y qué te quita tiempo. Sin compromiso.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">2</span>
+            <h3>Propuesta cerrada</h3>
+            <p>Te envío por escrito qué incluye, cuánto cuesta y cuándo estará.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">3</span>
+            <h3>Construyo y te enseño</h3>
+            <p>Ves avances cada semana y pides cambios antes de que esté terminado.</p>
+          </li>
+          <li>
+            <span class="steps__n" aria-hidden="true">4</span>
+            <h3>Entrega y soporte</h3>
+            <p>Lo publico, te explico cómo usarlo y sigo disponible si algo falla.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--flush-top" id="sobre-mi">
+      <div class="wrap about">
+        <div class="about__photo">[Tu foto]</div>
+        <div class="about__text">
+          <h2 class="section__title">Sobre mí</h2>
+          <p>Soy Iker, estudiante de último año de Ingeniería Informática en la Universidad de La Laguna. En la carrera he hecho aplicaciones completas, de la base de datos a la pantalla, y donde más disfruto es en el backend: diseñar cómo se guardan los datos y hacer que todo funcione sin fallos.</p>
+          <p>Ahora quiero poner eso al servicio de negocios de aquí que necesitan algo más que una página de presentación.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="contacto">
+      <div class="wrap">
+        <h2 class="contact__title">¿Tienes algo que podría funcionar mejor?</h2>
+        <p class="contact__lead">Escríbeme y cuéntamelo en dos líneas. Te respondo en menos de 24 horas.</p>
+        <a class="btn btn--light" href="mailto:tu-email@dominio.com">tu-email@dominio.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__row">
+      <p>© <span data-year>2026</span> Iker Martín Gámez, Tenerife</p>
+      <div class="site-footer__links">
+        <a href="https://www.linkedin.com/in/IkerMartinG">LinkedIn</a>
+        <a href="https://github.com/IkerMartinG">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
